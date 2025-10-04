@@ -1,0 +1,250 @@
+---
+
+---
+
+<a
+  href="#main"
+  class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] bg-white text-[#0D4B30] font-semibold px-4 py-2 rounded-md shadow"
+>main</a>
+<header
+  class="w-full py-4 px-4 md:px-10 text-white fixed top-0 left-0 z-50 transition-all duration-300 backdrop-blur-md"
+  id="site-header"
+>
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-2">
+      <img src="/clean-up-hack.svg" alt="Logo Clean Up Hack" class="w-30 h-auto" />
+    </a>
+
+    <nav
+      class="hidden lg:flex items-center gap-2 lg:gap-4 xl:gap-6 text-[18px] lg:text-[20px] font-semibold"
+      aria-label="Navegación principal"
+    >
+      <a
+        href="cronograma"
+        data-section="cronograma"
+        class="nav-link px-4 py-2 rounded-lg border-2 border-transparent hover:text-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus:outline-none transition"
+        >Cronograma</a
+      >
+      <a
+        href="#ubicacion"
+        data-section="ubicacion"
+        class="nav-link px-4 py-2 rounded-lg border-2 border-transparent hover:text-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus:outline-none transition"
+        >Ubicación</a
+      >
+      <a
+        href="#sponsors"
+        data-section="sponsors"
+        class="nav-link px-4 py-2 rounded-lg border-2 border-transparent hover:text-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus:outline-none transition"
+        >Sponsors</a
+      >
+      <a
+        href="#sobre-nosotros"
+        data-section="sobre-nosotros"
+        class="nav-link px-4 py-2 rounded-lg border-2 border-transparent hover:text-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus:outline-none transition"
+        >Sobre nosotros</a
+      >
+      <a
+        href="faqs"
+        data-section="faqs"
+        class="nav-link px-4 py-2 rounded-lg border-2 border-transparent hover:text-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus:outline-none transition"
+        >FAQs</a
+      >
+    </nav>
+    <a
+      href="#"
+      aria-label="Registrate"
+      class="hidden lg:inline-block bg-[#178F4E] hover:bg-[#11733E] text-white hover:text-[#FFC727] font-bold py-2.5 px-8 rounded-md border-1 border-white hover:border-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus-visible:ring-2 focus-visible:ring-[#FFC727]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent transition shadow-sm tracking-wide text-[18px] lg:text-[20px] leading-none focus:outline-none"
+    >
+      Registrate
+    </a>
+
+    <button
+      id="menu-toggle"
+      class="lg:hidden text-white focus:outline-none relative z-[60] p-2 -mr-2 rounded-md focus-visible:ring-2 focus-visible:ring-white/70"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Abrir menú"
+    >
+      <svg
+        id="icon-menu"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-7 w-7"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg
+        id="icon-close"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-7 w-7 hidden"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div id="menu-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden lg:hidden">
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="lg:hidden absolute top-full left-0 w-full px-6 pt-4 pb-8 bg-[#0D4B30] bg-gradient-to-b from-[#0D4B30] to-[#0A3824] shadow-xl rounded-b-2xl space-y-2 text-[20px] font-semibold tracking-wide opacity-0 -translate-y-2 pointer-events-none transition duration-200 ease-out z-50 will-change-transform will-change-opacity"
+  >
+    <ul class="flex flex-col gap-2">
+      <li>
+        <a
+          href="cronograma"
+          class="block py-3 px-3 rounded-lg border-2 border-transparent hover:bg-white/10 transition"
+          >Cronograma</a
+        >
+      </li>
+      <li>
+        <a
+          href="#ubicacion"
+          class="block py-3 px-3 rounded-lg border-2 border-transparent hover:bg-white/10 transition"
+          >Ubicación</a
+        >
+      </li>
+      <li>
+        <a
+          href="#sponsors"
+          class="block py-3 px-3 rounded-lg border-2 border-transparent hover:bg-white/10 transition"
+          >Sponsors</a
+        >
+      </li>
+      <li>
+        <a
+          href="#sobre-nosotros"
+          class="block py-3 px-3 rounded-lg border-2 border-transparent hover:bg-white/10 transition"
+          >Sobre nosotros</a
+        >
+      </li>
+      <li>
+        <a
+          href="faqs"
+          class="block py-3 px-3 rounded-lg border-2 border-transparent hover:bg-white/10 transition"
+          >FAQs</a
+        >
+      </li>
+    </ul>
+    <div class="pt-3">
+      <a
+        href="#"
+        aria-label="Registrate"
+        class="block text-center bg-[#178F4E] hover:bg-[#11733E] text-white hover:text-[#FFC727] font-bold py-3 px-10 rounded-md border-2 border-white hover:border-[#FFC727] transition shadow-sm tracking-wide text-[20px] leading-none focus:outline-none"
+      >
+        Registrate
+      </a>
+    </div>
+  </nav>
+
+  <script>
+    const btn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('menu-overlay');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+    const focusableSelectors = 'a, button';
+    const header = document.getElementById('site-header');
+    const desktopLinks = document.querySelectorAll('.nav-link');
+
+    let lastScrollY = window.scrollY;
+    function handleScroll() {
+      const current = window.scrollY;
+      if (current > 10) {
+        header?.classList.add('py-2', 'shadow-lg');
+        header?.classList.remove('py-4');
+      } else {
+        header?.classList.add('py-4');
+        header?.classList.remove('py-2', 'shadow-lg');
+      }
+      lastScrollY = current;
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    const sectionIds = Array.from(desktopLinks)
+      .map((l) => l.getAttribute('data-section'))
+      .filter((v): v is string => Boolean(v));
+    const targets = sectionIds.map((id: string) => document.getElementById(id));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            desktopLinks.forEach((link) => {
+              if (link.getAttribute('data-section') === id) {
+                link.classList.add('text-[#FFC727]', 'bg-white/5');
+                link.setAttribute('aria-current', 'page');
+              } else {
+                link.classList.remove('text-[#FFC727]', 'bg-white/5');
+                link.removeAttribute('aria-current');
+              }
+            });
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+    targets.forEach((sec) => sec && observer.observe(sec));
+
+    function openMenu() {
+      if (!menu) return;
+      menu.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
+      menu.classList.add('opacity-100', 'translate-y-0');
+      overlay && overlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      btn?.setAttribute('aria-expanded', 'true');
+      btn?.setAttribute('aria-label', 'Cerrar menú');
+      iconMenu?.classList.add('hidden');
+      iconClose?.classList.remove('hidden');
+      const firstLink = menu.querySelector('a');
+      firstLink && firstLink.focus({ preventScroll: true });
+    }
+
+    function closeMenu() {
+      if (!menu) return;
+      menu.classList.add('opacity-0', '-translate-y-2', 'pointer-events-none');
+      menu.classList.remove('opacity-100', 'translate-y-0');
+      overlay && overlay.classList.add('hidden');
+      document.body.style.overflow = '';
+      btn?.setAttribute('aria-expanded', 'false');
+      btn?.setAttribute('aria-label', 'Abrir menú');
+      iconMenu?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    }
+
+    function toggleMenu() {
+      if (menu?.classList.contains('pointer-events-none')) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    }
+
+    if (btn && menu) {
+      btn.addEventListener('click', toggleMenu);
+      overlay?.addEventListener('click', closeMenu);
+      menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+          closeMenu();
+          btn.focus();
+        }
+      });
+    }
+  </script>
+</header>
+<style>
+  nav a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+  }
+</style>

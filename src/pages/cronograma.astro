@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ScheduleComponent from '../components/Schedule.astro';
+
+const daySchedule = [
+  {
+    date: '24 de Octubre - Viernes',
+    activities: [
+      {
+        hour: '12:45 - 2:15',
+        name: 'Nombre de actividad',
+        ubication: 'Ubicación',
+        description: 'Descripción de la actividad',
+      },
+      {
+        hour: '14:30 - 15:30',
+        name: 'Otra actividad',
+        ubication: 'Auditorio',
+        description: 'Descripción de la segunda actividad',
+      },
+    ],
+  },
+  {
+    date: '25 de Octubre - Sábado',
+    activities: [
+      {
+        hour: '09:00 - 10:00',
+        name: 'Apertura',
+        ubication: 'Hall Principal',
+        description: 'Bienvenida y presentación del evento',
+      },
+      {
+        hour: '10:15 - 12:00',
+        name: 'Workshop',
+        ubication: 'Sala 3',
+        description: 'Taller práctico para los participantes',
+      },
+    ],
+  },
+];
+---
+
+<Layout>
+  <ScheduleComponent id="cronograma" schedule={daySchedule} />
+</Layout>

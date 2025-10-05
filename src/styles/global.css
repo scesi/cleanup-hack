@@ -13,9 +13,15 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-@media (min-width: 640px) { 
-  .section-block { padding-top: 6rem; padding-bottom: 6rem; }
+@media (min-width: 640px) {
+  .section-block {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
-@media (min-width: 768px) { 
-  .section-block { padding-top: 7rem; padding-bottom: 7rem; }
+@media (min-width: 768px) {
+  .section-block {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
 }

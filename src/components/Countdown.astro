@@ -1,0 +1,95 @@
+---
+
+---
+
+<div id="countdown" class="mt-6 md:mt-8 w-full flex justify-center">
+  <div
+    class="flex divide-x divide-white/35 bg-white/10 backdrop-blur-sm rounded-xl px-2 sm:px-3 md:px-4 py-3 md:py-4 border border-white/15 max-w-md w-full"
+    style="font-family:'Roboto',sans-serif;"
+  >
+    <div class="flex-1 flex flex-col items-center justify-center px-2 sm:px-3 text-center">
+      <span
+        id="days"
+        class="font-bold text-lg xs:text-xl sm:text-2xl md:text-4xl tabular-nums leading-none"
+        >00</span
+      >
+      <span
+        class="mt-1 text-[0.55rem] xs:text-[0.6rem] sm:text-xs md:text-sm tracking-wide uppercase"
+        >Días</span
+      >
+    </div>
+    <div class="flex-1 flex flex-col items-center justify-center px-2 sm:px-3 text-center">
+      <span
+        id="hours"
+        class="font-bold text-lg xs:text-xl sm:text-2xl md:text-4xl tabular-nums leading-none"
+        >00</span
+      >
+      <span
+        class="mt-1 text-[0.55rem] xs:text-[0.6rem] sm:text-xs md:text-sm tracking-wide uppercase"
+        >Horas</span
+      >
+    </div>
+    <div class="flex-1 flex flex-col items-center justify-center px-2 sm:px-3 text-center">
+      <span
+        id="minutes"
+        class="font-bold text-lg xs:text-xl sm:text-2xl md:text-4xl tabular-nums leading-none"
+        >00</span
+      >
+      <span
+        class="mt-1 text-[0.55rem] xs:text-[0.6rem] sm:text-xs md:text-sm tracking-wide uppercase"
+        >Minutos</span
+      >
+    </div>
+    <div class="flex-1 flex flex-col items-center justify-center px-2 sm:px-3 text-center">
+      <span
+        id="seconds"
+        class="font-bold text-lg xs:text-xl sm:text-2xl md:text-4xl tabular-nums leading-none"
+        >00</span
+      >
+      <span
+        class="mt-1 text-[0.55rem] xs:text-[0.6rem] sm:text-xs md:text-sm tracking-wide uppercase"
+        >Segundos</span
+      >
+    </div>
+  </div>
+</div>
+
+<script>
+  const eventDate = new Date('2025-10-24T22:00:00Z');
+
+  function updateCountdown() {
+    if (isNaN(eventDate.getTime())) {
+      console.error('Fecha de evento inválida');
+      return;
+    }
+    const now = new Date();
+    const diff = eventDate.getTime() - now.getTime();
+
+    const container = document.getElementById('countdown');
+    if (!container) return;
+
+    if (diff <= 0) {
+      container.innerHTML =
+        '<div class="text-lg sm:text-xl md:text-2xl font-semibold">¡El evento ha comenzado!</div>';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const set = (id: string, value: number) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value.toString().padStart(2, '0');
+    };
+
+    set('days', days);
+    set('hours', hours);
+    set('minutes', minutes);
+    set('seconds', seconds);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>

@@ -20,8 +20,14 @@ const { id = 'schedule', schedule } = Astro.props as Props;
 ---
 
 <section id={id} class="scroll-mt-28 py-16 sm:py-20 md:py-24" aria-labelledby={`${id}-title`}>
-  <header class="flex justify-center my-16">
-    <h2 id={`${id}-title`} class="text-5xl">Cronograma</h2>
+  <header class="flex justify-center my-32">
+    <h2
+      id={`${id}-title`}
+      class="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide drop-shadow-sm text-white"
+      style="font-family: 'Cabin Sketch', cursive;"
+    >
+      Cronograma
+    </h2>
   </header>
 
   <div>

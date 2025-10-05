@@ -1,30 +1,42 @@
-<section class="about-us">
+<section id="sobre-nosotros" class="about-us section-block scroll-mt-28">
   <h2 class="title">Conoce a los organizadores</h2>
   <div class="cards">
     <!-- Card SCESI -->
     <div class="card">
-      <img src="/scesi.png" alt="SCESI UMSS" class="logo-img" />
+      <img src="/scesi.svg" alt="SCESI UMSS" class="logo-img" />
       <div class="socials">
-        <a href="https://www.instagram.com/scesiumss"><img src="https://api.iconify.design/mdi/instagram.svg" alt="Instagram" width="24" /></a>
-        <a href="https://www.linkedin.com/company/scesi/?originalSubdomain=bo"><img src="https://api.iconify.design/mdi/linkedin.svg" alt="LinkedIn" width="24" /></a>
-        <a href="https://www.facebook.com/scesi/"><img src="https://api.iconify.design/mdi/facebook.svg" alt="Facebook" width="24" /></a>
+        <a href="https://www.instagram.com/scesiumss"
+          ><img src="https://api.iconify.design/mdi/instagram.svg" alt="Instagram" width="24" /></a
+        >
+        <a href="https://www.linkedin.com/company/scesi/?originalSubdomain=bo"
+          ><img src="https://api.iconify.design/mdi/linkedin.svg" alt="LinkedIn" width="24" /></a
+        >
+        <a href="https://www.facebook.com/scesi/"
+          ><img src="https://api.iconify.design/mdi/facebook.svg" alt="Facebook" width="24" /></a
+        >
       </div>
     </div>
 
     <!-- Card Hacklab -->
     <div class="card">
-      <img src="/hacklab.png" alt="Hacklab" class="logo-img" />
+      <img src="/hacklab.svg" alt="Hacklab" class="logo-img" />
       <div class="socials">
-        <a href="https://www.instagram.com/hacklabbrickheads/"><img src="https://api.iconify.design/mdi/instagram.svg" alt="Instagram" width="24" /></a>
-        <a href="https://www.linkedin.com/company/hacklab-brickheads-cochabamba"><img src="https://api.iconify.design/mdi/linkedin.svg" alt="LinkedIn" width="24" /></a>
-        <a href="https://www.facebook.com/HackLabBrickHeads/"><img src="https://api.iconify.design/mdi/facebook.svg" alt="Facebook" width="24" /></a>
+        <a href="https://www.instagram.com/hacklabbrickheads/"
+          ><img src="https://api.iconify.design/mdi/instagram.svg" alt="Instagram" width="24" /></a
+        >
+        <a href="https://www.linkedin.com/company/hacklab-brickheads-cochabamba"
+          ><img src="https://api.iconify.design/mdi/linkedin.svg" alt="LinkedIn" width="24" /></a
+        >
+        <a href="https://www.facebook.com/HackLabBrickHeads/"
+          ><img src="https://api.iconify.design/mdi/facebook.svg" alt="Facebook" width="24" /></a
+        >
       </div>
     </div>
   </div>
 </section>
 
 <style>
-    .logo-img {
+  .logo-img {
     height: 80px;
     width: auto;
     display: block;
@@ -32,13 +44,11 @@
     object-fit: contain;
   }
   .about-us {
-  text-align: center;
-  padding: 3rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
+    text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    gap: 2rem;
+  }
 
   .title {
     font-size: 2.5rem;
@@ -47,21 +57,9 @@
     margin-bottom: 2rem;
   }
 
-  .cards {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  .cards { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
 
-  .card {
-    background: #1b8f52;
-    padding: 2rem;
-    border-radius: 0.75rem;
-    width: 250px;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
+  .card { background:#1b8f52; padding:2rem; border-radius:0.75rem; width:250px; text-align:center; transition:transform .3s ease; }
 
   .card:hover {
     transform: translateY(-5px);
@@ -80,7 +78,7 @@
   }
 
   .socials img {
-    filter: invert(1); /* hace los íconos blancos */
+    filter: invert(1);
     transition: filter 0.2s;
   }
 

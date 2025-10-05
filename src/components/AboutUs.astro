@@ -1,47 +1,90 @@
----
-const AboutUs = [
-  {
-    nombre: "SCESI UMSS",
-    logo: "/scesi.png", // pon aquí la ruta correcta de tu logo
-    color: "text-red-500",
-    redes: [
-      { icon: "instagram", url: "https://www.instagram.com/scesi_umss" },
-      { icon: "linkedin", url: "https://www.linkedin.com/company/scesi-umss" },
-      { icon: "facebook", url: "https://www.facebook.com/scesi.umss" },
-      { icon: "telegram", url: "https://t.me/scesi" },
-    ],
-  },
-  {
-    nombre: "Hacklab BrickHeads",
-    logo: "/hacklab.png",
-    color: "text-green-400",
-    redes: [
-      { icon: "instagram", url: "https://www.instagram.com/hacklab_bo" },
-      { icon: "linkedin", url: "#" },
-      { icon: "facebook", url: "https://www.facebook.com/hacklab.bo" },
-      { icon: "telegram", url: "https://t.me/hacklab" },
-    ],
-  },
-];
----
-
-<section class="flex flex-col items-center justify-center py-16 bg-gradient-to-br from-green-500 to-green-400 text-white">
-  <h2 class="text-2xl font-semibold mb-10">Conoce a los organizadores</h2>
-
-  <div class="flex flex-wrap justify-center gap-10">
-    {organizadores.map((org) => (
-      <div class="bg-green-700/40 backdrop-blur-sm p-6 rounded-xl shadow-md hover:scale-105 transition-transform w-72 text-center">
-        <img src={org.logo} alt={org.nombre} class="mx-auto mb-4 h-14 object-contain" />
-        <h3 class={`text-lg font-semibold ${org.color}`}>{org.nombre}</h3>
-
-        <div class="flex justify-center gap-4 mt-4 text-white text-xl">
-          {org.redes.map((r) => (
-            <a href={r.url} target="_blank" rel="noopener noreferrer" class="hover:text-gray-200 transition-colors">
-              <i class={`bi bi-${r.icon}`}></i>
-            </a>
-          ))}
-        </div>
+<section class="about-us">
+  <h2 class="title">Conoce a los organizadores</h2>
+  <div class="cards">
+    <!-- Card SCESI -->
+    <div class="card">
+      <img src="/scesi.png" alt="SCESI UMSS" class="logo-img" />
+      <div class="socials">
+        <a href="https://www.instagram.com/scesiumss"><img src="https://api.iconify.design/mdi/instagram.svg" alt="Instagram" width="24" /></a>
+        <a href="https://www.linkedin.com/company/scesi/?originalSubdomain=bo"><img src="https://api.iconify.design/mdi/linkedin.svg" alt="LinkedIn" width="24" /></a>
+        <a href="https://www.facebook.com/scesi/"><img src="https://api.iconify.design/mdi/facebook.svg" alt="Facebook" width="24" /></a>
       </div>
-    ))}
+    </div>
+
+    <!-- Card Hacklab -->
+    <div class="card">
+      <img src="/hacklab.png" alt="Hacklab" class="logo-img" />
+      <div class="socials">
+        <a href="https://www.instagram.com/hacklabbrickheads/"><img src="https://api.iconify.design/mdi/instagram.svg" alt="Instagram" width="24" /></a>
+        <a href="https://www.linkedin.com/company/hacklab-brickheads-cochabamba"><img src="https://api.iconify.design/mdi/linkedin.svg" alt="LinkedIn" width="24" /></a>
+        <a href="https://www.facebook.com/HackLabBrickHeads/"><img src="https://api.iconify.design/mdi/facebook.svg" alt="Facebook" width="24" /></a>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+    .logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    object-fit: contain;
+  }
+  .about-us {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .cards {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    background: #1b8f52;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .logo-img {
+    max-width: 180px;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .socials img {
+    filter: invert(1); /* hace los íconos blancos */
+    transition: filter 0.2s;
+  }
+
+  .socials img:hover {
+    filter: invert(71%) sepia(86%) saturate(547%) hue-rotate(340deg) brightness(95%) contrast(97%);
+  }
+</style>

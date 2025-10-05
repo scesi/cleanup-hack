@@ -1,0 +1,47 @@
+---
+const AboutUs = [
+  {
+    nombre: "SCESI UMSS",
+    logo: "/scesi.png", // pon aquí la ruta correcta de tu logo
+    color: "text-red-500",
+    redes: [
+      { icon: "instagram", url: "https://www.instagram.com/scesi_umss" },
+      { icon: "linkedin", url: "https://www.linkedin.com/company/scesi-umss" },
+      { icon: "facebook", url: "https://www.facebook.com/scesi.umss" },
+      { icon: "telegram", url: "https://t.me/scesi" },
+    ],
+  },
+  {
+    nombre: "Hacklab BrickHeads",
+    logo: "/hacklab.png",
+    color: "text-green-400",
+    redes: [
+      { icon: "instagram", url: "https://www.instagram.com/hacklab_bo" },
+      { icon: "linkedin", url: "#" },
+      { icon: "facebook", url: "https://www.facebook.com/hacklab.bo" },
+      { icon: "telegram", url: "https://t.me/hacklab" },
+    ],
+  },
+];
+---
+
+<section class="flex flex-col items-center justify-center py-16 bg-gradient-to-br from-green-500 to-green-400 text-white">
+  <h2 class="text-2xl font-semibold mb-10">Conoce a los organizadores</h2>
+
+  <div class="flex flex-wrap justify-center gap-10">
+    {organizadores.map((org) => (
+      <div class="bg-green-700/40 backdrop-blur-sm p-6 rounded-xl shadow-md hover:scale-105 transition-transform w-72 text-center">
+        <img src={org.logo} alt={org.nombre} class="mx-auto mb-4 h-14 object-contain" />
+        <h3 class={`text-lg font-semibold ${org.color}`}>{org.nombre}</h3>
+
+        <div class="flex justify-center gap-4 mt-4 text-white text-xl">
+          {org.redes.map((r) => (
+            <a href={r.url} target="_blank" rel="noopener noreferrer" class="hover:text-gray-200 transition-colors">
+              <i class={`bi bi-${r.icon}`}></i>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

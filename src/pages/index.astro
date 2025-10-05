@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Sponsors from '../components/Sponsors.astro';
-import AboutUs from "../components/AboutUs.astro";
+import AboutUs from '../components/AboutUs.astro';
+import Questions from '../components/Questions.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -12,14 +13,16 @@ const sponsors = [
   // { name: 'Sponsor3', image: '/', url: '#' },
   // { name: 'Sponsor4', image: '/', url: '#' },
 ];
+
+const questions = [
+  { question: 'Pregunta?', answer: 'Respuesta meticulosamente pensada ' },
+  { question: 'Pregunta?', answer: 'Respuesta meticulosamente pensada ' },
+];
 ---
 
 <Layout>
   <Hero />
-  <Sponsors
-    id="sponsors"
-    sponsors={sponsors}
-  />
+  <Sponsors id="sponsors" sponsors={sponsors} />
   <AboutUs />
+  <Questions id="questions" questions={questions} />
 </Layout>
-

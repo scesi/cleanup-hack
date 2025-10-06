@@ -1,6 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Sponsors from "../components/Sponsors.astro";
+
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Sponsors from '../components/Sponsors.astro';
+import AboutUs from '../components/AboutUs.astro';
 import Location from "../components/Location.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -11,13 +14,12 @@ const sponsors = [
   // { name: 'Sponsor3', image: '/', url: '#' },
   // { name: 'Sponsor4', image: '/', url: '#' },
 ];
+
 ---
 
 <Layout>
+  <Hero />
   <Location />
-  <Sponsors
-    id="sponsors"
-    sponsors={sponsors}
-  />
+  <Sponsors id="sponsors" sponsors={sponsors} />
+  <AboutUs />
 </Layout>
-

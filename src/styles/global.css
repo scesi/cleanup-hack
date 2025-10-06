@@ -1,1 +1,27 @@
 @import 'tailwindcss';
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(90deg, #227943, #38c76e);
+}
+
+.section-block {
+  min-height: 70vh;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 640px) {
+  .section-block {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+@media (min-width: 768px) {
+  .section-block {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}

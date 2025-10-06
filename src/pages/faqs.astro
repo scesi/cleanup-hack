@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Questions from '../components/Questions.astro';
+import questions from '../data/faqs.json';
+---
+
+<Layout>
+  <Questions id="faqs" questions={questions} />
+</Layout>
+
+<style>
+  h1 { font-family: 'Roboto', sans-serif; }
+</style>

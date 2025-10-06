@@ -1,0 +1,46 @@
+---
+interface Question {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  questions: Question[];
+}
+
+const { id = 'questions', questions } = Astro.props as Props;
+---
+
+<section id={id} class="scroll-mt-24 py-8 sm:py-10 md:py-12" aria-labelledby={`${id}-title`}>
+  <header class="flex justify-center my-12">
+    <h2
+      id={`${id}-title`}
+      class="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide drop-shadow-sm text-white"
+      style="font-family: 'Cabin Sketch', cursive;"
+    >
+      Preguntas Frecuentes
+    </h2>
+  </header>
+  <div class="flex flex-col items-start text-white md:mx-40 mx-6">
+    {
+      questions.map((question) => (
+        <details class="p-2 group">
+          <summary class="cursor-pointer list-none">
+            <span class="md:text-2xl text-lg">{question.question}</span>
+            <span class="ml-2 text-3xl transition-transform duration-200">
+              <span class="group-open:hidden">+</span>
+              <span class="hidden group-open:inline">−</span>
+            </span>
+          </summary>
+
+          <div class="py-4 md:px-16 px-6 md:text-base text-sm">
+            <p>{question.answer}</p>
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</section>

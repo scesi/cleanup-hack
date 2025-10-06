@@ -1,5 +1,6 @@
 ---
-
+// Nota: 'astro:transitions' no disponible (tipos no presentes). Usamos clase utilitaria para fade.
+const navFade = 'fade-link';
 ---
 
 <a
@@ -27,30 +28,40 @@
     >
       <a
         href="/cronograma"
+        transition:persist
+        class:list={[navFade]}
         data-section="cronograma"
         class="nav-link px-4 py-2 rounded-lg border-2 border-transparent hover:text-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus:outline-none transition"
         >Cronograma</a
       >
       <a
         href="/#ubicacion"
+        transition:persist
+        class:list={[navFade]}
         data-section="ubicacion"
         class="nav-link px-4 py-2 rounded-lg border-2 border-transparent hover:text-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus:outline-none transition"
         >Ubicación</a
       >
       <a
         href="/#sponsors"
+        transition:persist
+        class:list={[navFade]}
         data-section="sponsors"
         class="nav-link px-4 py-2 rounded-lg border-2 border-transparent hover:text-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus:outline-none transition"
         >Sponsors</a
       >
       <a
         href="/#sobre-nosotros"
+        transition:persist
+        class:list={[navFade]}
         data-section="sobre-nosotros"
         class="nav-link px-4 py-2 rounded-lg border-2 border-transparent hover:text-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus:outline-none transition"
         >Sobre nosotros</a
       >
       <a
         href="/faqs"
+        transition:persist
+        class:list={[navFade]}
         data-section="faqs"
         class="nav-link px-4 py-2 rounded-lg border-2 border-transparent hover:text-[#FFC727] focus-visible:text-[#FFC727] focus-visible:border-[#FFC727] focus:outline-none transition"
         >FAQs</a
@@ -109,6 +120,8 @@
       <li>
         <a
           href="/cronograma"
+          transition:persist
+          class:list={[navFade]}
           class="block py-3 px-3 rounded-lg border-2 border-transparent hover:bg-white/10 transition"
           >Cronograma</a
         >
@@ -116,6 +129,8 @@
       <li>
         <a
           href="/#ubicacion"
+          transition:persist
+          class:list={[navFade]}
           class="block py-3 px-3 rounded-lg border-2 border-transparent hover:bg-white/10 transition"
           >Ubicación</a
         >
@@ -123,6 +138,8 @@
       <li>
         <a
           href="/#sponsors"
+          transition:persist
+          class:list={[navFade]}
           class="block py-3 px-3 rounded-lg border-2 border-transparent hover:bg-white/10 transition"
           >Sponsors</a
         >
@@ -130,6 +147,8 @@
       <li>
         <a
           href="/#sobre-nosotros"
+          transition:persist
+          class:list={[navFade]}
           class="block py-3 px-3 rounded-lg border-2 border-transparent hover:bg-white/10 transition"
           >Sobre nosotros</a
         >
@@ -137,6 +156,8 @@
       <li>
         <a
           href="/faqs"
+          transition:persist
+          class:list={[navFade]}
           class="block py-3 px-3 rounded-lg border-2 border-transparent hover:bg-white/10 transition"
           >FAQs</a
         >
@@ -144,7 +165,7 @@
     </ul>
     <div class="pt-3">
       <a
-        href="#"
+        href="https://forms.gle/5tt3AwhfMw22aKBD6"
         aria-label="Registrate"
         class="block text-center bg-[#178F4E] hover:bg-[#11733E] text-white hover:text-[#FFC727] font-bold py-3 px-10 rounded-md border-2 border-white hover:border-[#FFC727] transition shadow-sm tracking-wide text-[20px] leading-none focus:outline-none"
       >
@@ -261,6 +282,32 @@
         }
       });
     }
+
+    // View Transition + smooth scroll para enlaces hash internos
+    const hashLinks = document.querySelectorAll('a[href^="/#"], a[href^="#"]');
+    hashLinks.forEach((el) => {
+      const link = el as HTMLAnchorElement;
+      link.addEventListener('click', (e) => {
+        const url = new URL(link.href, window.location.origin);
+        const hash = url.hash.replace('#', '');
+        if (!hash) return;
+        const target = document.getElementById(hash);
+        if (!target) return;
+        // Solo manejar si es misma página
+        if (url.pathname === window.location.pathname) {
+          e.preventDefault();
+          const doScroll = () => {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.pushState(null, '', '#' + hash);
+          };
+          if (document.startViewTransition) {
+            document.startViewTransition(doScroll);
+          } else {
+            doScroll();
+          }
+        }
+      });
+    });
   </script>
 </header>
 <style>
@@ -268,5 +315,22 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 20px;
+  }
+</style>
+<style>
+  .fade-link {
+    view-transition-name: fade-link;
+  }
+  ::view-transition-old(fade-link),
+  ::view-transition-new(fade-link) {
+    animation: fade-link-fade 0.4s ease;
+  }
+  @keyframes fade-link-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 </style>

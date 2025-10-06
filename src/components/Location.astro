@@ -16,6 +16,7 @@ const {
 } = Astro.props as Props;
 
 const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(mapsQuery)}&output=embed`;
+const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
 ---
 <section id={id} class="scroll-mt-28 py-16 sm:py-20 md:py-24" aria-labelledby={`${id}-title`}>
   <div class="mx-4 sm:mx-6 md:mx-10 rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12">
@@ -37,17 +38,25 @@ const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(mapsQuery)}&o
         </a>
       </div>
 
-      <div class="mt-8 sm:mt-10 mx-auto max-w-5xl overflow-hidden rounded-2xl shadow-xl ring-1 ring-white/50">
+      <div class="mt-8 sm:mt-10 mx-auto max-w-5xl overflow-hidden rounded-2xl shadow-xl ring-1 ring-white/50 group relative">
         <div class="relative w-full" style="padding-bottom: 45%">
           <iframe
             src={mapSrc}
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            class="absolute inset-0 h-full w-full border-0"
+            class="absolute inset-0 h-full w-full border-0 pointer-events-none"
             title={`Mapa de ${title}`}
             aria-label={`Mapa de ${title}`}
           ></iframe>
         </div>
+        <a
+          href={mapsLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Abrir mapa en Google Maps: ${title}`}
+          class="absolute inset-0 z-10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+        ></a>
+        <div class="pointer-events-none absolute bottom-2 right-2 z-20 rounded-md bg-black/40 px-2 py-1 text-[10px] sm:text-xs tracking-wide uppercase font-semibold text-white opacity-70 transition group-hover:opacity-100">Abrir en Google Maps</div>
       </div>
     </div>
   </div>

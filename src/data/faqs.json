@@ -1,0 +1,74 @@
+[
+  {
+    "question": "¿Qué es una hackathon?",
+    "answer": "Una hackathon es un evento donde personas con diferentes habilidades se reúnen para desarrollar soluciones creativas a problemas específicos en un tiempo limitado."
+  },
+  {
+    "question": "¿Quién puede participar?",
+    "answer": "Cualquier persona interesada en innovación, tecnología o emprendimiento puede participar, sin importar su nivel de experiencia."
+  },
+  {
+    "question": "¿Necesito saber programar para participar?",
+    "answer": "No necesariamente. Se valoran habilidades de programación, diseño, marketing y gestión de proyectos. Lo importante es aportar al equipo con tus fortalezas."
+  },
+  {
+    "question": "¿Cuánto dura la hackathon?",
+    "answer": "La duración depende del evento, pero normalmente varía entre 24 y 48 horas. Consulta el cronograma específico de nuestra hackathon."
+  },
+  {
+    "question": "¿Cómo me inscribo en la hackathon?",
+    "answer": "La inscripción se realiza a través del formulario en nuestra página web. Solo necesitas completar tus datos y aceptar las reglas del evento."
+  },
+  {
+    "question": "¿Cómo se forman los equipos?",
+    "answer": "Los equipos se forman en base a intereses, habilidades complementarias y disponibilidad de los participantes. Se fomentará la colaboración y la diversidad de perfiles."
+  },
+  {
+    "question": "¿Cuál es el tamaño mínimo/máximo de un equipo?",
+    "answer": "Normalmente los equipos son de 2 a 5 personas, pero puede variar según las reglas del evento."
+  },
+  {
+    "question": "¿Puedo participar de manera individual?",
+    "answer": "Sí, te ayudaremos a integrarte en un equipo durante el evento."
+  },
+  {
+    "question": "¿Cuál es la temática de la hackathon?",
+    "answer": "La temática se anunciará antes del evento y estará relacionada con innovación, tecnología y soluciones creativas a problemas específicos."
+  },
+  {
+    "question": "¿Qué pasa si mi proyecto no se ajusta totalmente a la temática?",
+    "answer": "Tu proyecto será evaluado, pero se recomienda que trate de alinearse con la temática principal para cumplir con los criterios de evaluación."
+  },
+  {
+    "question": "¿Puedo usar código o proyectos previos?",
+    "answer": "Depende de las reglas de la hackathon, pero en general se permite reutilizar código propio, siempre y cuando se cite correctamente."
+  },
+  {
+    "question": "¿Qué criterios se usarán para evaluar los proyectos?",
+    "answer": "Normalmente se evalúan la creatividad, viabilidad, impacto, presentación y calidad técnica del proyecto."
+  },
+  {
+    "question": "¿Qué debo llevar a la hackathon?",
+    "answer": "Trae tu computadora, cargadores, cuadernos, bolígrafos y cualquier material que pueda ayudarte a trabajar en tu proyecto. También ropa cómoda y ganas de aprender."
+  },
+  {
+    "question": "¿Habrá comida y bebidas durante el evento?",
+    "answer": "Sí, la organización proporcionará refrigerios, almuerzos y cenas según el cronograma del evento."
+  },
+  {
+    "question": "¿Tendremos acceso a internet y electricidad?",
+    "answer": "Sí, el lugar de la hackathon contará con Wi-Fi y tomas de corriente disponibles para todos los participantes."
+  },
+  {
+    "question": "¿Se entregarán certificados de participación?",
+    "answer": "Sí, todos los participantes recibirán un certificado al finalizar la hackathon."
+  },
+  {
+    "question": "¿Habrá mentores disponibles durante el evento?",
+    "answer": "Sí, mentores expertos estarán disponibles para guiar a los equipos y responder dudas técnicas y de diseño."
+  },
+  {
+    "question": "¿Qué tipo de ayuda puedo recibir de los organizadores o mentores?",
+    "answer": "Podrás recibir orientación técnica, sugerencias de diseño, feedback sobre tu proyecto y apoyo en logística si es necesario."
+  }
+]

@@ -25,23 +25,11 @@
   },
   {
     "question": "¿Cuál es el tamaño mínimo/máximo de un equipo?",
-    "answer": "Normalmente los equipos son de 2 a 5 personas, pero puede variar según las reglas del evento."
+    "answer": "Los equipos son de 2 a 4 personas."
   },
   {
     "question": "¿Puedo participar de manera individual?",
     "answer": "Sí, te ayudaremos a integrarte en un equipo durante el evento."
-  },
-  {
-    "question": "¿Cuál es la temática de la hackathon?",
-    "answer": "La temática se anunciará antes del evento y estará relacionada con innovación, tecnología y soluciones creativas a problemas específicos."
-  },
-  {
-    "question": "¿Qué pasa si mi proyecto no se ajusta totalmente a la temática?",
-    "answer": "Tu proyecto será evaluado, pero se recomienda que trate de alinearse con la temática principal para cumplir con los criterios de evaluación."
-  },
-  {
-    "question": "¿Puedo usar código o proyectos previos?",
-    "answer": "Depende de las reglas de la hackathon, pero en general se permite reutilizar código propio, siempre y cuando se cite correctamente."
   },
   {
     "question": "¿Qué criterios se usarán para evaluar los proyectos?",
@@ -52,16 +40,8 @@
     "answer": "Trae tu computadora, cargadores, cuadernos, bolígrafos y cualquier material que pueda ayudarte a trabajar en tu proyecto. También ropa cómoda y ganas de aprender."
   },
   {
-    "question": "¿Habrá comida y bebidas durante el evento?",
-    "answer": "Sí, la organización proporcionará refrigerios, almuerzos y cenas según el cronograma del evento."
-  },
-  {
     "question": "¿Tendremos acceso a internet y electricidad?",
     "answer": "Sí, el lugar de la hackathon contará con Wi-Fi y tomas de corriente disponibles para todos los participantes."
-  },
-  {
-    "question": "¿Se entregarán certificados de participación?",
-    "answer": "Sí, todos los participantes recibirán un certificado al finalizar la hackathon."
   },
   {
     "question": "¿Habrá mentores disponibles durante el evento?",

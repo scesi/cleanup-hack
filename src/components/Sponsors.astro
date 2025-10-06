@@ -36,11 +36,11 @@ const {
         </svg>
       </p>
 
-      <div class="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8">
+      <div class="mt-8 sm:mt-10 md:mt-12 flex flex-wrap justify-center gap-5 sm:gap-6 md:gap-8">
         {sponsors.map((s) => (
           <a
             href={s.url || '#'}
-            class="group block rounded-2xl border border-white/70 bg-white/5 p-6 sm:p-7 md:p-8 backdrop-blur-[2px] shadow-[0_2px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_28px_rgba(0,0,0,0.14)] transition-all hover:-translate-y-1 hover:border-white ring-0 hover:ring-2 hover:ring-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+            class="group block rounded-2xl border border-white/70 bg-white/5 p-6 sm:p-7 md:p-8 backdrop-blur-[2px] shadow-[0_2px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_28px_rgba(0,0,0,0.14)] transition-all hover:-translate-y-1 hover:border-white ring-0 hover:ring-2 hover:ring-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 w-full sm:w-auto sm:max-w-xs"
             aria-label={`Visitar ${s.name}`}
             target={s.url?.startsWith('http') ? '_blank' : undefined}
             rel={s.url?.startsWith('http') ? 'noopener noreferrer' : undefined}

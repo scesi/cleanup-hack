@@ -7,12 +7,14 @@ import daySchedule from '../data/schedules.json';
 
 <Layout>
   <div class="relative">
-    <LeavesBackground />
     <ScheduleComponent id="cronograma" schedule={daySchedule} />
   </div>
 </Layout>
-
 <style>
-  .relative { position: relative; }
-  .relative > :where(section){ position: relative; }
+  .relative {
+    position: relative;
+  }
+  .relative > :where(section) {
+    position: relative;
+  }
 </style>

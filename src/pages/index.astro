@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Sponsors from '../components/Sponsors.astro';
-import Schedule from '../components/Schedule.astro';
 import AboutUs from '../components/AboutUs.astro';
 import Questions from '../components/Questions.astro';
 
@@ -15,43 +14,6 @@ const sponsors = [
   // { name: 'Sponsor4', image: '/', url: '#' },
 ];
 
-const schedule = [
-  {
-    date: '24 de Octubre - Viernes',
-    activities: [
-      {
-        hour: '12:45 - 2:15',
-        name: 'Nombre de actividad',
-        ubication: 'Ubicacion',
-        description: 'Descripcion',
-      },
-      {
-        hour: '12:45 - 2:15',
-        name: 'Nombre de actividad',
-        ubication: 'Ubicacion',
-        description: 'Descripcion',
-      },
-    ],
-  },
-  {
-    date: '24 de Octubre - Viernes',
-    activities: [
-      {
-        hour: '12:45 - 2:15',
-        name: 'Nombre de actividad',
-        ubication: 'Ubicacion',
-        description: 'Descripcion',
-      },
-      {
-        hour: '12:45 - 2:15',
-        name: 'Nombre de actividad',
-        ubication: 'Ubicacion',
-        description: 'Descripcion',
-      },
-    ],
-  },
-];
-
 const questions = [
   { question: 'Pregunta?', answer: 'Respuesta meticulosamente pensada ' },
   { question: 'Pregunta?', answer: 'Respuesta meticulosamente pensada ' },
@@ -62,6 +24,5 @@ const questions = [
   <Hero />
   <Sponsors id="sponsors" sponsors={sponsors} />
   <AboutUs />
-  <Schedule id="schedule" schedule={schedule} />
   <Questions id="questions" questions={questions} />
 </Layout>

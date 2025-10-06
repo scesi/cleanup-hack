@@ -1,0 +1,165 @@
+---
+
+interface LeafCfg {
+  side: 'left' | 'right';
+  variant: 'light' | 'dark';
+  facing: 'left' | 'right';
+  top?: string; bottom?: string; left?: string; right?: string;
+  delay: number; rot: number; scale: number; opacity: number;
+}
+
+interface Props { leftCount?: number; rightCount?: number; random?: boolean; }
+interface Props {
+  leftCount?: number; rightCount?: number; random?: boolean;
+  responsive?: boolean; // si true, escala la cantidad según ancho viewport
+    min?: number; max?: number; // total minimo y maximo
+    leftRatio?: number; // porcentaje de hojas del lado izquierdo (0..1)
+}
+const {
+  leftCount = 4,
+  rightCount = 4,
+  random = true,
+  responsive = false,
+    min = 6,
+    max = 16,
+    leftRatio = 0.5,
+} = Astro.props as Props;
+
+const rand = (min: number, max: number) => (Math.random() * (max - min)) + min;
+
+function buildSide(count: number, side: 'left'|'right', variant: 'light'|'dark'): LeafCfg[] {
+  if (count <= 0) return [];
+  return Array.from({ length: count }).map((_, i) => {
+    const ratio = (i + 0.5) / count;
+    const jitter = random ? rand(-6, 6) : (i % 2 === 0 ? -3 : 3);
+    const baseTop = Math.min(90, Math.max(5, ratio * 90 + jitter));
+    const facing: 'left'|'right' = i % 2 === 0 ? (side === 'left' ? 'left' : 'right') : (side === 'left' ? 'right' : 'left');
+    const rot = (side === 'left' ? -1 : 1) * (random ? rand(-20, 20) : (i % 2 === 0 ? -8 : 10));
+    const scale = random ? rand(0.45, 0.95) : (0.45 + (i % 4) * 0.15);
+    const opacity = random ? rand(0.22, 0.40) : 0.24 + (i % 3) * 0.04;
+    const delay = random ? rand(0, 3.5) : (i * 0.8) % 3.6;
+    const common = { side, variant, facing, top: baseTop + '%', delay, rot, scale, opacity } as LeafCfg;
+    if (side === 'left') return { ...common, left: (4 + (i % 3) * 3) + '%' };
+    return { ...common, right: (4 + (i % 3) * 3) + '%' };
+  });
+}
+
+let baseLeft = leftCount;
+let baseRight = rightCount;
+if (responsive) {
+  const totalMin = Math.max(0, min);
+  const l = Math.round(totalMin * leftRatio);
+  baseLeft = l;
+  baseRight = Math.max(0, totalMin - l);
+}
+const leaves: LeafCfg[] = [
+  ...buildSide(baseLeft, 'left', 'light'),
+  ...buildSide(baseRight, 'right', 'dark')
+];
+---
+
+<div class="leaves-wrapper" aria-hidden="true" data-responsive={responsive} data-min={min} data-max={max} data-left-ratio={leftRatio}>
+  {leaves.map((leaf) => {
+    const src = `/leafs/leaf_${leaf.variant}_${leaf.facing}.svg`;
+    return (
+      <div
+        class="leaf"
+        style={`
+          ${leaf.top ? `top:${leaf.top};` : ''}
+          ${leaf.bottom ? `bottom:${leaf.bottom};` : ''}
+          ${leaf.left ? `left:${leaf.left};` : ''}
+          ${leaf.right ? `right:${leaf.right};` : ''}
+          animation-delay:${leaf.delay}s;
+          --rot:${leaf.rot}deg;
+          --scale:${leaf.scale};
+          --dx:${3 + (Math.random()*2)|0}px; /* simple seed */
+          --dy:${4 + (Math.random()*2)|0}px;
+          --rotAmp:${2 + (Math.random()*2)|0}deg;
+          --dur:${(5.5 + (Math.random()*1.2)).toFixed(2)}s;
+          opacity:${leaf.opacity};
+        `}
+      >
+        <img src={src} alt="" draggable="false" />
+      </div>
+    );
+  })}
+</div>
+{responsive && (
+  <script is:inline>
+    (() => {
+      const wrapper = document.currentScript ? document.currentScript.previousElementSibling : null;
+      if (!wrapper || wrapper.dataset.processed) return;
+      wrapper.dataset.processed = 'true';
+
+      const min = parseInt(wrapper.dataset.min || '6', 10);
+      const max = parseInt(wrapper.dataset.max || '14', 10);
+      const leftRatio = parseFloat(wrapper.dataset.leftRatio || '0.5');
+
+      const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+
+      function buildSide(count, side, variant) {
+        return Array.from({ length: count }).map((_, i) => {
+          const ratio = (i + 0.5) / count;
+          const jitter = (i % 2 === 0 ? -3 : 3);
+          const baseTop = Math.min(90, Math.max(5, ratio * 90 + jitter));
+          const facing = i % 2 === 0 ? (side === 'left' ? 'left' : 'right') : (side === 'left' ? 'right' : 'left');
+          const rot = (side === 'left' ? -1 : 1) * (i % 2 === 0 ? -8 : 10);
+          const scale = 0.45 + (i % 4) * 0.15;
+          const opacity = 0.24 + (i % 3) * 0.04;
+          const delay = (i * 0.8) % 3.6;
+          const pos = 4 + (i % 3) * 3;
+          const dx = 3 + (i % 3);
+          const dy = 4 + (i % 2);
+          const rotAmp = 2 + (i % 2);
+          const dur = 5.5 + (i % 4)*0.35;
+          const style = `position:absolute;${side === 'left' ? `left:${pos}%` : `right:${pos}%`};top:${baseTop}%;animation-delay:${delay}s;--rot:${rot}deg;--scale:${scale};--dx:${dx}px;--dy:${dy}px;--rotAmp:${rotAmp}deg;--dur:${dur}s;opacity:${opacity};`;
+          const src = `/leafs/leaf_${variant}_${facing}.svg`;
+          return `<div class="leaf" style="${style}"><img src="${src}" alt="" draggable="false"/></div>`;
+        }).join('');
+      }
+
+      function compute() {
+        const vw = window.innerWidth;
+        const t = clamp((vw - 480) / (1600 - 480), 0, 1); // 0..1
+        const total = Math.round(min + t * (max - min));
+        const left = Math.round(total * leftRatio);
+        const right = Math.max(0, total - left);
+        return { left, right };
+      }
+
+      let current = { left: -1, right: -1 };
+      function render() {
+        const next = compute();
+        if (next.left === current.left && next.right === current.right) return;
+        current = next;
+        wrapper.innerHTML = buildSide(next.left, 'left', 'light') + buildSide(next.right, 'right', 'dark');
+      }
+
+      render();
+      window.addEventListener('resize', () => requestAnimationFrame(render));
+    })();
+  </script>
+)}
+
+<style is:global>
+  .leaves-wrapper {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .leaf { position: absolute; animation: gentle var(--dur,6s) ease-in-out infinite; will-change: transform; }
+  .leaf img { display:block; width:100%; height:auto; pointer-events:none; }
+
+  @keyframes gentle {
+    0%   { transform: translate(0,0) rotate(var(--rot)) scale(var(--scale)); }
+    25%  { transform: translate(calc(var(--dx)*0.4), calc(var(--dy)*-0.5)) rotate(calc(var(--rot) + var(--rotAmp))); }
+    50%  { transform: translate(calc(var(--dx)*-0.5), calc(var(--dy)*0.4)) rotate(calc(var(--rot) - var(--rotAmp))); }
+    75%  { transform: translate(calc(var(--dx)*0.25), calc(var(--dy)*-0.3)) rotate(calc(var(--rot) + calc(var(--rotAmp)*0.6))); }
+    100% { transform: translate(0,0) rotate(var(--rot)) scale(var(--scale)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .leaf { animation: none; }
+  }
+</style>

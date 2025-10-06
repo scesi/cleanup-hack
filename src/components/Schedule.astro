@@ -41,11 +41,11 @@ const { id = 'schedule', schedule } = Astro.props as Props;
           </div>
           <div class="m-4 md:mx-40 flex flex-col items-center">
             {day.activities.map((activity) => (
-              <article class="flex my-2 bg-[#62626233] rounded-2xl w-full">
-                <div class="bg-[#FFC727] flex items-center p-4  md:px-8 text-white md:font-bold font-semibold rounded-l-2xl rounded-r-[6px] text-sm md:text-base">
-                  <time datetime={activity.hour}>{activity.hour}</time>
+              <article class="flex my-3 bg-[#62626233] rounded-2xl w-full">
+                <div class="bg-[#FFC727] flex items-center justify-center shrink-0 w-32 md:w-48 p-4 text-white md:font-bold font-semibold rounded-l-2xl rounded-r-[6px] text-sm md:text-base">
+                  <time class="whitespace-nowrap" datetime={activity.hour}>{activity.hour}</time>
                 </div>
-                <div class="flex flex-col justify-center mx-5 text-white">
+                <div class="flex flex-col justify-center mx-5 py-3 md:py-2 text-white">
                   <h4 class="font-bold text-sm">
                     {activity.name} - {activity.ubication}
                   </h4>

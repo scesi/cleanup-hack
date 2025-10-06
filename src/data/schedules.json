@@ -1,0 +1,198 @@
+[
+  {
+    "date": "Día 1 - Hackathon",
+    "activities": [
+      {
+        "hour": "18:00 - 19:00",
+        "name": "Acreditación",
+        "ubication": "Auditorio Principal",
+        "description": "• Registro de participantes\n• Entrega de credenciales y kits (bolígrafo, libreta, stickers, etc)\n• Verificación de equipos"
+      },
+      {
+        "hour": "19:00 - 19:30",
+        "name": "Inauguración y presentación oficial",
+        "ubication": "Auditorio Principal",
+        "description": "• Palabras de bienvenida\n• Breve explicación del objetivo del evento"
+      },
+      {
+        "hour": "19:30 - 19:45",
+        "name": "Explicación de reglas de la Hackathon",
+        "ubication": "Auditorio Principal",
+        "description": "• Límites de tiempo\n• Normas de convivencia\n• Evaluación y criterios"
+      },
+      {
+        "hour": "19:45 - 20:10",
+        "name": "Dinámica rompehielos / conocerse",
+        "ubication": "Ambiente de American Spaces",
+        "description": "• Juego corto para que todos participen y se presenten"
+      },
+      {
+        "hour": "20:10 - 20:40",
+        "name": "Formación de equipos",
+        "ubication": "Ambiente de American Spaces",
+        "description": "• Agrupar personas sin equipo\n• Elección de nombres creativos según temática\n• Presentación de cada equipo al resto"
+      },
+      {
+        "hour": "20:40 - 21:40",
+        "name": "Cena",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "21:40 - 22:10",
+        "name": "Sesión introductoria sobre la problemática",
+        "ubication": "Auditorio Principal",
+        "description": "• Breve charla sobre la gestión de basura\n• Datos y estadísticas relevantes\n• Ejemplos de proyectos exitosos"
+      },
+      {
+        "hour": "22:10 - 22:40",
+        "name": "Tour guiado por los espacios",
+        "ubication": "Ambiente de American Spaces",
+        "description": "• Áreas de trabajo\n• Espacios de descanso\n• Zona de comidas y baños"
+      },
+      {
+        "hour": "22:40 - 22:50",
+        "name": "Kick-off de la Hackathon",
+        "ubication": "Ambiente de American Spaces",
+        "description": "• Cuenta regresiva y arranque oficial del reto"
+      },
+      {
+        "hour": "22:50 - 01:00",
+        "name": "Desarrollo",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "date": "Día 2 - Hackathon",
+    "activities": [
+      {
+        "hour": "08:00 - 08:45",
+        "name": "Desayuno",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "08:45 - 10:15",
+        "name": "Desarrollo",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "10:15 - 10:45",
+        "name": "Break: Concurso Cubo Rubik",
+        "ubication": "Auditorio Principal",
+        "description": ""
+      },
+      {
+        "hour": "10:45 - 12:15",
+        "name": "Desarrollo",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "12:15 - 13:15",
+        "name": "Almuerzo",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "13:15 - 14:45",
+        "name": "Desarrollo",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "14:45 - 15:15",
+        "name": "Break: Retos relámpago con fotos en los breaks + Premio por más likes",
+        "ubication": "Auditorio Principal",
+        "description": "Auditorio Principal"
+      },
+      {
+        "hour": "15:15 - 16:45",
+        "name": "Desarrollo",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "16:45 - 17:15",
+        "name": "Break: Concurso de talentos de 1 por equipo",
+        "ubication": "Auditorio Principal",
+        "description": "Auditorio Principal"
+      },
+      {
+        "hour": "17:15 - 20:45",
+        "name": "Pre-speach con mentores (5 min expo y 10 min feedback) / Desarrollo",
+        "ubication": "Ambiente de American Spaces y Auditorio Principal",
+        "description": "Auditorio Principal y Ambiente de American Spaces"
+      },
+      {
+        "hour": "20:45 - 21:45",
+        "name": "Cena",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "21:45 - 01:00",
+        "name": "Desarrollo",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "date": "Día 3 - Hackathon",
+    "activities": [
+      {
+        "hour": "08:00 - 08:45",
+        "name": "Desayuno",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "08:45 - 10:15",
+        "name": "Desarrollo final (últimos ajustes)",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "10:15 - 10:45",
+        "name": "Break: Trivia, con pizarras para los equipos o Kahoot",
+        "ubication": "Auditorio Principal",
+        "description": ""
+      },
+      {
+        "hour": "10:45 - 12:15",
+        "name": "Subir los archivos y documentos",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "12:15 - 13:15",
+        "name": "Almuerzo",
+        "ubication": "Ambiente de American Spaces",
+        "description": ""
+      },
+      {
+        "hour": "13:15 - 13:35",
+        "name": "Sortear orden de exposición",
+        "ubication": "Auditorio Principal",
+        "description": ""
+      },
+      {
+        "hour": "13:35 - 16:15",
+        "name": "Evaluación / Stands",
+        "ubication": "Ambiente de American Spaces y Auditorio Principal",
+        "description": ""
+      },
+      {
+        "hour": "16:15 - 17:15",
+        "name": "Clausura",
+        "ubication": "Auditorio Principal",
+        "description": ""
+      }
+    ]
+  }
+]
+

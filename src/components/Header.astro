@@ -95,7 +95,7 @@
 
   <nav
     id="mobile-menu"
-    class="lg:hidden absolute top-full left-0 w-full px-6 pt-4 pb-8 bg-[#0D4B30] bg-gradient-to-b from-[#0D4B30] to-[#0A3824] shadow-xl rounded-b-2xl space-y-2 text-[20px] font-semibold tracking-wide opacity-0 -translate-y-2 pointer-events-none transition duration-200 ease-out z-50 will-change-transform will-change-opacity"
+  class="lg:hidden absolute top-full left-0 w-full px-6 pt-4 pb-8 bg-[#0D4B30] bg-gradient-to-b from-[#0D4B30] to-[#0A3824] shadow-xl space-y-2 text-[20px] font-semibold tracking-wide opacity-0 -translate-y-2 pointer-events-none transition duration-200 ease-out z-50 will-change-transform will-change-opacity min-h-[calc(100dvh-var(--header-height,72px))] overflow-y-auto"
   >
     <ul class="flex flex-col gap-2">
       <li>
@@ -198,6 +198,9 @@
       if (!menu) return;
       menu.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
       menu.classList.add('opacity-100', 'translate-y-0');
+  // Ajusta la altura dinámica para que el menú cubra hasta abajo
+  const headerHeight = header?.offsetHeight || 0;
+  menu.style.setProperty('--header-height', headerHeight + 'px');
       overlay && overlay.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
       btn?.setAttribute('aria-expanded', 'true');

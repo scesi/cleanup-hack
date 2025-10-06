@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ScheduleComponent from '../components/Schedule.astro';
+import LeavesBackground from '../components/LeavesBackground.astro';
 
 const daySchedule = [
   {
@@ -41,5 +42,13 @@ const daySchedule = [
 ---
 
 <Layout>
-  <ScheduleComponent id="cronograma" schedule={daySchedule} />
+  <div class="relative">
+    <LeavesBackground />
+    <ScheduleComponent id="cronograma" schedule={daySchedule} />
+  </div>
 </Layout>
+
+<style>
+  .relative { position: relative; }
+  .relative > :where(section){ position: relative; }
+</style>

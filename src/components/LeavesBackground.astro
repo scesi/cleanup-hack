@@ -1,5 +1,5 @@
 ---
-const { count = 20 } = Astro.props;
+const { count = 40 } = Astro.props;
 ---
 
 <div class="leaves-container" aria-hidden="true">
@@ -41,8 +41,11 @@ const { count = 20 } = Astro.props;
   }
 
   @keyframes fall {
-    to {
-      transform: translateY(100vh);
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(var(--rotation));
     }
   }
 
@@ -94,9 +97,12 @@ const { count = 20 } = Astro.props;
         const initialRotation = Math.random() * 60 - 30;
         htmlLeaf.style.transform = `rotate(${initialRotation}deg)`;
 
+        const rotationSpeed = Math.random() * 360;
+        htmlLeaf.style.setProperty('--rotation', `${rotationSpeed}deg`);
+
         const img = htmlLeaf.querySelector('img');
         if (img) {
-          img.style.filter = `brightness(${Math.random() * 0.5 + 0.7})`;
+          img.style.filter = `brightness(${Math.random() * 0.7 + 0.7})`;
           let transformStyle = '';
           if (Math.random() > 0.5) {
             transformStyle += 'scaleX(-1)';

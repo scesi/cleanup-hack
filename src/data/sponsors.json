@@ -3,5 +3,25 @@
     "name": "CBA",
     "image": "/cba.png",
     "url": "https://cbacoch.org/"
+  },
+  {
+    "name": "Jala University",
+    "image": "/jala.png",
+    "url": "https://jala.university/"
+  },
+  {
+    "name": "Truextend",
+    "image": "/truextend.png",
+    "url": "https://www.truextend.com/"
+  },
+  {
+    "name": "Nice",
+    "image": "/nice.png",
+    "url": "https://www.nice.com/"
+  },
+  {
+    "name": "Michi Cosmico",
+    "image": "/michicosmico.png",
+    "url": "https://www.instagram.com/michi.cosmico/"
   }
 ]

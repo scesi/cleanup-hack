@@ -1,5 +1,5 @@
 ---
-// Nota: 'astro:transitions' no disponible (tipos no presentes). Usamos clase utilitaria para fade.
+import IconHack from '../icons/clean_up_hack.astro';
 const navFade = 'fade-link';
 ---
 
@@ -16,7 +16,7 @@ const navFade = 'fade-link';
     <div class="flex-1 lg:hidden"></div>
     <div class="flex-1 flex justify-center lg:flex-initial lg:justify-start">
       <a href="/" class="flex items-center gap-2">
-        <img src="/clean-up-hack.svg" alt="Logo Clean Up Hack" class="w-30 h-auto" />
+        <IconHack class="w-30 h-auto" />
       </a>
     </div>
 

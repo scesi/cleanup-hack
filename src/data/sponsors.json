@@ -5,14 +5,14 @@
     "url": "https://cbacoch.org/"
   },
   {
+    "name": "Cobra-Met",
+    "image": "/cobramet-logo.png",
+    "url": "https://cobrametales.com/"
+  },
+  {
     "name": "Jala University",
     "image": "/jala.png",
     "url": "https://jala.university/"
-  },
-  {
-    "name": "Truextend",
-    "image": "/truextend.png",
-    "url": "https://www.truextend.com/"
   },
   {
     "name": "Nice",
@@ -23,5 +23,10 @@
     "name": "Michi Cosmico",
     "image": "/michicosmico.png",
     "url": "https://www.instagram.com/michi.cosmico/"
+  },
+  {
+    "name": "Truextend",
+    "image": "/truextend.png",
+    "url": "https://www.truextend.com/"
   }
 ]
